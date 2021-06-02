@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./img/favicon.png">
+    <title>Juego-Dengue</title>
+    <!--STYLES-->
+    <link rel="stylesheet" href="./css/styles.css">
+    <!--FONTS-->
+</head>
+<body id='body'>
+    <header>
+        <ul>
+            <li><button id='btn_Play'>Iniciar</button></li>
+            <li><button id='btn_exit'><a href='/'>Salir</a></button></li>
+        </ul>
+    </header>
+    <div id='titleGame'>
+        <h1>Nombre del Juego</h1>
+    </div>
+    <section>       
+        <nav>
+            <div>
+                <img id='clock' src="./img/clock.png" />
+                <p id='time'>00:00</p>
+            </div>
+        </nav>
+        <content>           
+            <div id='content_imageGames'>                
+                <!-- Lupa JQUERY -->
+                <div class="magnify">                    
+                    <!-- tamanio imagen lupa -->
+                    <div class="large"></div>                    
+                    <!-- Imagenes del juego tamanio original -->
+                    <img class="small" src="./img/game/plantilla1.png" id='img_Game'/>                   
+                </div>
+                <!--Se crearan por javascript la cantidad de mosquitos o lugares necesarios-->
+                <span class='content_mosquitos' id='mosquitos-1'></span>
+            </div>
+        </content>
+        <span id='lupa'>
+            <img src="./img/lupa.png" alt="lupa" />
+        </span>
+        <aside id='col_mosquitos_finding-1'>
+            <!--Se crearan por javascript la cantidad de mosquitos o lugares encontrados y se mostraran en la barra-->
+            <span class='content_Encontrado_mosquito' id='mosquito_encontrado-1'><img src="./img/game/checkObject.png" /></span>
+        </aside>
+    </section>
+    <div id='instructions'>
+        <article>
+            <h3>Encuentra los objetos ocultos</h3>
+            <p> Usando la lupa, busca dentro de la imagen donde estan los objetos ocultos.<br>
+                Haz click para marcar los lugares donde pueden esconderse.<br>
+                Tienes un tiempo limite para encontrarlos.
+            </p>
+        </article>
+    </div>
+
+    <footer>
+        <p>Copyrigth &copy; 2021</p>
+    </footer>
+
+    <!--Carga del script del juego y las librerias-->
+    <script src="./js/jquery/jquery.min.js"></script>
+    <script src="./js/jquery/jquery-ui.min.js"></script>
+    <script src="./js/game.js"></script>
+</body>
+</html>

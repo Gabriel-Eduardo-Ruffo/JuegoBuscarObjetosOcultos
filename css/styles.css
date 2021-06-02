@@ -1,0 +1,207 @@
+@import url("./normalize.css");/*normalizamos los estilos*/
+
+*{
+    box-sizing: border-box;/*regla para el box-model tenga el total de la medida dada, incluido border, margin, padding y contenido*/
+}
+
+
+body{
+    background-color: #9ff8ab;
+    min-width: 800px;/*calcular el ancho de la imagen mas un 5% del lado derecho mas la columna de cosas encontradas y un 5% del lado derecho*/
+}
+
+/*************HEADER**************/
+header{
+    width: 100%;
+    height: 70px;
+    top: 0px;
+    background-color: #b6fccb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px 0 #161616;
+}
+header ul{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+}
+header ul li{
+    margin: 0 2rem 0 2rem;
+    /*background-color: rgb(43, 255, 0);*/
+}
+header ul li button{
+    width: 10rem;
+    height: 2rem;
+    border-radius: 1rem;
+}
+
+/**************TITULO***************/
+.titleGame{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h1{
+    text-align: center;
+    /*background-color: tomato;*/
+}
+
+/*******CONTENEDOR RELOJ***********/
+section{
+    display: flex;
+    justify-content: center;
+    position: relative; /*esto es para habilitar la propiedad de posicionamiento relativo para que los div que hagamos se muevan en relacion a este section*/
+}
+section nav{
+    height: 100px;
+    width: 100px;
+    margin: 1rem 0 1rem 2rem;
+    /*background-color: cyan;*/
+}
+section nav div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+section nav div #clock{
+    height: 100px;
+}
+section nav div #time{
+    text-align: center;
+    font-size: 2rem;
+    width: 100%;
+}
+
+/*******CONTENEDOR JUEGO***********/
+section content{
+    height: 600px;
+    width: 1200px;
+    margin: 1rem 2rem 1rem 2rem;
+    box-shadow: 0 0 10px 0 #161616;
+    /*background-color: blue;*/
+    /*overflow: hidden;*/
+}
+#content_imageGames{
+    position: relative;
+}
+
+
+/******CONTENIDO DEL MOSQUITO********/
+.content_mosquitos{
+    position: absolute;
+    top:50px;
+    left: 20px;
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    background-color: rgba(255, 0, 0, 0.411);
+}
+
+/****CONTENEDOR OBJETOS ENCONTRADOS******/
+section aside{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 600px;
+    width: 100px;
+    margin: 1rem 2rem 1rem 2rem;
+    box-shadow: 0 0 10px 0 #161616;
+    /*background-color: tomato;*/
+}
+.content_Encontrado_mosquito{
+    width: 80px;
+    height: 80px;
+    margin: 10px;
+    /*background-color: purple;*/
+    border-radius: 50%;
+    box-shadow: 0 0 10px 0 #161616;
+}
+.content_Encontrado_mosquito img{
+    width: 100%;
+    object-fit: contain;
+}
+
+/*******INSTRUCCIONES***********/
+#instructions{
+    display: flex;
+    justify-content: flex-start;
+    margin: 0 2rem 0 2rem;
+}
+#instructions article{
+    background-color: rgba(215, 255, 71, 0.336);
+    padding: 0 1rem 0 1rem;
+    border:1px solid rgb(132, 132, 132);
+    border-radius: 1rem;
+}
+
+/*********LUPA********************/
+#lupa{
+    z-index: 10;
+    pointer-events: none;
+    position: absolute;
+    height: 150px;
+    width: 150px;
+}
+#lupa img{
+    z-index: 20;
+    pointer-events: none;
+    height: 100%;
+    object-fit: contain;
+    overflow: hidden;
+    position: relative;
+    top: -22px;
+    left: -22px;
+    filter: drop-shadow(10px 10px 10px #585858);
+}
+
+
+.magnify {
+    width: 100%; 
+    position: relative;
+}
+
+/*Creamos el vidrio de la lupa*/
+.large {
+    /*configuracion tamanio lupa*/
+	width: 100px; height: 100px;
+	position: absolute;
+	border-radius: 100%;
+    pointer-events: none;
+	
+	/*efectos sombras en la lupa*/
+	box-shadow: 0 0 0 7px rgba(255, 255, 255, 0.85), 
+	0 0 7px 7px rgba(0, 0, 0, 0.25), 
+	inset 0 0 40px 2px rgba(0, 0, 0, 0.25);
+	
+	/*Imagen amplificada*/
+	background: url('../img/game/plantillaZoom1.png') no-repeat;
+	
+	/*ocultamos*/
+	/*display: none;*/
+}
+
+/*Resolver cuando se amplia la imagen*/
+.small { 
+    display: block; 
+}
+
+
+
+
+/**********FOOTER******************/
+footer{
+    position:fixed;
+    left:0px;
+    bottom:0px;
+    height:2rem;
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #b6fccb;
+}
