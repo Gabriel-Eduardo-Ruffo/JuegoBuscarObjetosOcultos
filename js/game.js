@@ -87,7 +87,7 @@ window.onload = function(){
     });
 
 
-    let imageFind= document.querySelector('#mosquitos-1');
+    let imageFind= document.querySelector('#objeto-1');
     imageFind.addEventListener('click',function(e){
         alert('click');
     });

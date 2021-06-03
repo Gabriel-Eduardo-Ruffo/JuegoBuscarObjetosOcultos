@@ -91,15 +91,18 @@ section content{
 }
 
 
-/******CONTENIDO DEL MOSQUITO********/
-.content_mosquitos{
+/******CONTENIDO DEL OBJETO A BUSCAR********/
+.content_objects{
     position: absolute;
-    top:50px;
-    left: 20px;
+    top: 100px;
+    left: 1050px;
     height: 5rem;
     width: 5rem;
     border-radius: 50%;
-    background-color: rgba(255, 0, 0, 0.411);
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(0, 0, 0);
+    background-color: rgba(43, 255, 0, 0.021);
 }
 
 /****CONTENEDOR OBJETOS ENCONTRADOS******/
@@ -113,7 +116,7 @@ section aside{
     box-shadow: 0 0 10px 0 #161616;
     /*background-color: tomato;*/
 }
-.content_Encontrado_mosquito{
+.content_Find_Object{
     width: 80px;
     height: 80px;
     margin: 10px;
@@ -121,7 +124,7 @@ section aside{
     border-radius: 50%;
     box-shadow: 0 0 10px 0 #161616;
 }
-.content_Encontrado_mosquito img{
+.content_Find_Object img{
     width: 100%;
     object-fit: contain;
 }
