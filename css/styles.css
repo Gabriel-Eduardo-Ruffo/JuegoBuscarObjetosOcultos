@@ -175,7 +175,8 @@ section aside{
 /*Creamos el vidrio de la lupa*/
 .large {
     /*configuracion tamanio lupa*/
-	width: 100px; height: 100px;
+	width: 100px; 
+    height: 100px;
 	position: absolute;
 	border-radius: 100%;
     pointer-events: none;

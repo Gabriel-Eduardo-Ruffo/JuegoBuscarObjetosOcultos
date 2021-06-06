@@ -8,7 +8,7 @@ window.onload = function(){
     //referencia del div que contiene la imagen ampliada
     let imgZoomDiv = document.querySelector(".large");
     //referencia del div que contiene la imagen original
-    let imgDiv = document.querySelector(".small");
+    let imgBase = document.querySelector(".small");
     //referencia a la imagen del juego
     let imageGame= document.querySelector('#img_Game');
   
@@ -23,9 +23,7 @@ window.onload = function(){
         {
             //creamos el objeto imagen base. imagen original.
             var image_object = new Image();
-            image_object.src = $(".small").attr("src");//le pasamos la direccion donde esta la imagen
-            console.log(document.querySelector(".small").src);
-            console.log($(".small").attr("src"));
+            image_object.src = imgBase.src;
 
             native_width = image_object.width;
             native_height = image_object.height;
@@ -51,23 +49,24 @@ window.onload = function(){
             }
 
             //Si esta visible el contenedor large....Se muestra la imagen ampliada
-            if($(".large").is(":visible"))
+            if(window.getComputedStyle(imgZoomDiv)['display'] != 'none')
             {
                 //La imagen ampliada se tiene que mover para emular el efecto de lupa.
                 //Se toma de referencia la imagen original (no ampliada)
                 //se calcula su tamanio y se le resta el tamanio de la imagen ampliada. 
                 //El 1.5 es la velocidad que tendra de movimiento la lupa con respecto a la imagen ampliada.
-                //$(".large").width())+50) se le suma 50 por que es un ajuste manual que hice para que coincida con todo lo que arme
-                var rx = (Math.round(((mx/$(".small").width()*native_width)*1.5) - ($(".large").width())+50)*-1);
-                var ry = (Math.round(((my/$(".small").height()*native_height)*1.5) - ($(".large").height())+50)*-1);
+                var rx = (Math.round(((mx/imgBase.width*native_width)*1.5) - (imgZoomDiv.clientWidth)+50)*-1);
+                var ry = (Math.round(((my/imgBase.height*native_height)*1.5) - (imgZoomDiv.clientHeight)+50)*-1);
                 var bgp = rx + "px " + ry + "px";
 
                 //posicion el centro de la lupa (vidrio) con el puntero
-                var px = mx - $(".large").width()/2;
-                var py = my - $(".large").height()/2;
+                var px = mx - imgZoomDiv.clientWidth/2;
+                var py = my - imgZoomDiv.clientHeight/2;
                 
                 //Se muestra la imagen y se va ajustando la posicion de la imagen de fondo (se mueve la imagen ampliada emulando el zoom de la lupa)
-                $(".large").css({left: px, top: py, backgroundPosition: bgp});
+                imgZoomDiv.style.left = px +'px';
+                imgZoomDiv.style.top = py +'px';
+                imgZoomDiv.style.backgroundPosition=bgp;
             }
         }
     });
