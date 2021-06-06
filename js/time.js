@@ -1,5 +1,8 @@
-let settingSeconds = 59;
-let settingMinutes = 1;
+let settingSeconds = 59;//seteo de los segundos iniciales del juego
+let settingMinutes = 1;//seteo de los minutos iniciales del juego
+
+let timeSeconds;
+let timeMinutes;
 
 let seconds;
 let minutes;
@@ -8,7 +11,11 @@ let textMinutes = 00;
 
 let timeGame;
 
-init();
+window.addEventListener('load', function(){
+    timeSeconds = document.querySelector('#timeSeconds');//referencia al tag que muestra los segundos
+    timeMinutes = document.querySelector('#timeMinutes');//referencia al tag que muestra los minutos
+    init();
+});
 
 function init(){
     seconds = settingSeconds ;
@@ -24,11 +31,12 @@ function init(){
     }else{
         textMinutes = minutes;
     }
-    document.querySelector('#timeSeconds').innerHTML = textSeconds;
-    document.querySelector('#timeMinutes').innerHTML = textMinutes; 
+    timeSeconds.innerHTML = textSeconds;
+    timeMinutes.innerHTML = textMinutes; 
 }
 
-document.querySelector('#btn_Play').addEventListener('click', ()=>{
+//esta funcion puede ser llamada de otro script para comenzar el conteo del juego
+function startClock(){
 
     clearInterval(timeGame);//detenemos el interval de timeGame
 
@@ -53,7 +61,7 @@ document.querySelector('#btn_Play').addEventListener('click', ()=>{
         }else{
             textSeconds = seconds;
         }
-        document.querySelector('#timeSeconds').innerHTML = textSeconds;
+        timeSeconds.innerHTML = textSeconds;
         seconds--;
     }
     
@@ -67,7 +75,7 @@ document.querySelector('#btn_Play').addEventListener('click', ()=>{
         }else{
             textMinutes = minutes;
         }
-        document.querySelector('#timeMinutes').innerHTML = textMinutes;
+        timeMinutes.innerHTML = textMinutes;
     }
 
-});
+}
