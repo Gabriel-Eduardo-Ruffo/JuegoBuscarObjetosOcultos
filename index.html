@@ -24,7 +24,9 @@
         <nav>
             <div>
                 <img id='clock' src="./img/clock.png" />
-                <p id='time'>00:00</p>
+                <div class='timer'>
+                    <span id='timeMinutes'>00</span><span>:</span><span id='timeSeconds'>00</span>
+                </div>
             </div>
         </nav>
         <content>           
@@ -65,6 +67,8 @@
     <!--Carga del script del juego y las librerias-->
     <script src="./js/jquery/jquery.min.js"></script>
     <script src="./js/jquery/jquery-ui.min.js"></script>
+    <script src="./js/lupa.js"></script>
+    <script src="./js/time.js"></script>
     <script src="./js/game.js"></script>
 </body>
 </html>

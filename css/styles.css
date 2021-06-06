@@ -71,10 +71,14 @@ section nav div{
 section nav div #clock{
     height: 100px;
 }
-section nav div #time{
-    text-align: center;
+.timer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.timer span{
     font-size: 2rem;
-    width: 100%;
 }
 
 /*******CONTENEDOR JUEGO***********/
